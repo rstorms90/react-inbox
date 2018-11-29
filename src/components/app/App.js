@@ -33,7 +33,6 @@ export default class App extends Component {
     const response = await fetch("http://localhost:8082/api/messages")
     let resJson = await response.json()
     this.setState({
-      ...this.state,
       messages: resJson
     })
   }

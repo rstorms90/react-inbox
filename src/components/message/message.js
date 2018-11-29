@@ -8,7 +8,8 @@ const Message = ({ message, toggleSelect, toggleStar }) => {
   const labels = message.labels.map((label, i) => (
     <span key={i} className="label label-warning">{label}</span>
   ))
-
+  // console.log(message)
+  
   return (
     <div className={`row message ${read} ${selected}`}>
       <div className="col-xs-1">
