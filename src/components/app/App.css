@@ -1,5 +1,24 @@
+body {
+  background-image: linear-gradient(to bottom right, rgb(167, 219, 250), rgb(66, 180, 247));
+  background-size: cover;
+  height: 1000px;
+}
+
+.navbar {
+  background-image: linear-gradient(to bottom right, rgb(66, 180, 247), rgb(167, 219, 250));
+  box-shadow: 5px 5px 10px;
+}
+
+a {
+  color: white;
+}
+
 .App {
   text-align: center;
+}
+
+.navTitle {
+  font-size: 2em;
 }
 
 .App-header {

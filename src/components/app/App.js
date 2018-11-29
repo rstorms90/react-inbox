@@ -173,7 +173,7 @@ export default class App extends Component {
   render = () => {
     return (
       <div>
-        <div className="navbar navbar-default" role="navigation">
+        <div className="navbar" role="navigation">
           <div className="container">
             <div className="navbar-header">
               <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -182,7 +182,7 @@ export default class App extends Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="/">Russ' Inbox</a>
+              <a className="navTitle" href="/">Russ' Inbox</a>
             </div>
           </div>
         </div>

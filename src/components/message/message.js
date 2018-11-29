@@ -1,4 +1,5 @@
 import React from 'react'
+import './message.css'
 
 const Message = ({ message, toggleSelect, toggleStar }) => {
   const read = message.read ? 'read' : 'unread'

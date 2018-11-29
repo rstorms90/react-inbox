@@ -26,19 +26,19 @@ const Toolbar = ({ messages, toggleSelectAll, toggleCompose, markAsRead, markAsU
           unread {unreadCount === 1 ? 'message' : 'messages'}
         </p>
 
-        <button className="btn btn-danger" onClick={toggleCompose}>
+        <button className="btn btn-success" onClick={toggleCompose}>
           <i className={`fa fa-plus`}></i>
         </button>
 
-        <button className="btn btn-default" onClick={toggleSelectAll}>
+        <button className="btn btn-warning" onClick={toggleSelectAll}>
           <i className={`fa ${selectAllClass}`}></i>
         </button>
 
-        <button className="btn btn-default" onClick={markAsRead} disabled={selectedCount === 0}>
+        <button className="btn btn-primary" onClick={markAsRead} disabled={selectedCount === 0}>
           Mark As Read
         </button>
 
-        <button className="btn btn-default" onClick={markAsUnread} disabled={selectedCount === 0}>
+        <button className="btn btn-info" onClick={markAsUnread} disabled={selectedCount === 0}>
           Mark As Unread
         </button>
 
@@ -64,7 +64,7 @@ const Toolbar = ({ messages, toggleSelectAll, toggleCompose, markAsRead, markAsU
           <option value="gschool">gschool</option>
         </select>
 
-        <button className="btn btn-default" onClick={deleteMessages} disabled={selectedCount === 0}>
+        <button className="btn btn-danger" onClick={deleteMessages} disabled={selectedCount === 0}>
           <i className="fa fa-trash-o"></i>
         </button>
       </div>
