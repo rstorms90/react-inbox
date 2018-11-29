@@ -1,7 +1,7 @@
 import React from 'react'
 
 const createMessage = ({ sendMessage }) => {
-    const onSubimt = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault()
         sendMessage({
             subject: e.target.subject.value,
