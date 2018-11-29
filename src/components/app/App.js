@@ -15,7 +15,7 @@ export default class App extends Component {
 
   request = async (method = 'GET', body = null) => {
     if (body) body = JSON.stringify(body)
-    return await fetch("http://localhost:8082/api/messages", {
+    return await fetch(`${process.env.REACT_APP_API_URL}`, {
       method: method,
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export default class App extends Component {
   }
 
   getMessages = async () => {
-    const response = await fetch("http://localhost:8082/api/messages")
+    const response = await fetch(`${process.env.REACT_APP_API_URL}`)
     let resJson = await response.json()
     this.setState({
       messages: resJson
