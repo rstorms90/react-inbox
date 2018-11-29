@@ -5,6 +5,7 @@ import Messages from '../messages/messages'
 import ComposeMessage from '../createMessage/createMessage'
 
 export default class App extends Component {
+
   constructor(props) {
     super(props)
     this.state = {
@@ -18,7 +19,7 @@ export default class App extends Component {
       method: method,
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
       },
       body: body
     })
@@ -29,7 +30,7 @@ export default class App extends Component {
   }
 
   getMessages = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}`)
+    const response = await fetch(`http://l`)
     let resJson = await response.json()
     this.setState({
       ...this.state,
@@ -45,7 +46,7 @@ export default class App extends Component {
     const index = this.state.messages.indexOf(message)
     this.setState({
       messages: [
-        ...this.state.message.slic(0, index),
+        ...this.state.messages.slice(0, index),
         { ...message, [property]: !message[property] },
         ...this.state.messages.slice(index + 1),
       ]
@@ -70,7 +71,7 @@ export default class App extends Component {
     const selectedMessages = this.state.messages.filter(message => message.selected)
     const selected = selectedMessages.length !== this.state.messages.length
     this.setState({
-      messages: this.state.message.map(message => (
+      messages: this.state.messages.map(message => (
         message.selected !== selected ? { ...message, selected } : message
       ))
     })
@@ -159,18 +160,18 @@ export default class App extends Component {
   sendMessage = async (message) => {
     const response = await this.request('POST', {
       subject: message.subject,
-      body: message.body
+      body: message.body,
     })
     const newMessage = await response.json()
 
     const messages = [...this.state.messages, newMessage]
     this.setState({
       messages,
-      composing: false
+      composing: false,
     })
   }
-  
-  render() {
+
+  render = () => {
     return (
       <div>
         <div className="navbar navbar-default" role="navigation">
