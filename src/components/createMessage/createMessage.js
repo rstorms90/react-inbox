@@ -1,6 +1,6 @@
 import React from 'react'
 
-const composeMessage = ({ sendMessage }) => {
+const createMessage = ({ sendMessage }) => {
     const onSubimt = (e) => {
         e.preventDefault()
         sendMessage({
@@ -41,4 +41,4 @@ const composeMessage = ({ sendMessage }) => {
     )
 }
 
-export default composeMessage
+export default createMessage
