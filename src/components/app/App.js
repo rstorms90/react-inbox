@@ -30,7 +30,7 @@ export default class App extends Component {
   }
 
   getMessages = async () => {
-    const response = await fetch(`http://l`)
+    const response = await fetch(`${process.env.REACT_APP_API_URL}`)
     let resJson = await response.json()
     this.setState({
       ...this.state,
